@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-Wall -Wextra -std=c11 -pedantic
-DEPS=src/main.c src/include/config.c
+DEPS=src/main.c src/include/cfg.c
 LIBS=
 
 build: src/main.c
