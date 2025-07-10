@@ -2,14 +2,15 @@
 #define H_CONFIG
 
 typedef enum {
-    KEY,
-    VALUE,
-    COMMENT,
+    IDENTIFIRE,
+    STRING,
+    NUMBER,
+    BOOLEAN,
     EQUALS,
-    QUOTATION,
+    COMMENT,
     INLINE_COMMENT,
-    NEW_LINE,
-    EOL,
+    NEWLINE,
+    EOF,
 } cfg_TokenType;
 
 typedef struct {
