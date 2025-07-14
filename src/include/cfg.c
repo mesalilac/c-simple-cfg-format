@@ -8,12 +8,24 @@
 cfg_Tokens *cfg_lexer(char *text) {
     cfg_Tokens *tokens = malloc(sizeof(cfg_Tokens));
 
-    int cursor = 0;
+    size_t cursor = 0;
     int line = 1;
-    int column = 1;
+    int column = 0;
 
     while (cursor != strlen(text) && text[cursor] != '\0') {
-        printf("char: %c\n", text[cursor]);
+        column += 1;
+        printf("char(line: %d, column: %d): %c\n", line, column, text[cursor]);
+
+        switch (text[cursor]) {
+        case '\n':
+            line += 1;
+            column = 0;
+            break;
+
+        default:
+            break;
+        }
+
         cursor += 1;
     }
 
