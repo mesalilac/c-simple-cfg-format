@@ -17,6 +17,8 @@ cfg_Tokens *cfg_lexer(char *text) {
         cursor += 1;
     }
 
+    // TODO: insert EOF Token
+
     return tokens;
 }
 
