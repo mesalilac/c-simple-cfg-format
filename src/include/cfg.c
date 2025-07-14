@@ -16,6 +16,16 @@ cfg_Tokens *cfg_lexer(char *text) {
         column += 1;
         printf("char(line: %d, column: %d): %c\n", line, column, text[cursor]);
 
+        // NEWLINE,
+        // EQUALS,
+        // COMMENT,
+        // INLINE_COMMENT,
+        // IDENTIFIRE,
+        // STRING,
+        // NUMBER,
+        // BOOLEAN,
+        // EOF,
+
         switch (text[cursor]) {
         case '\n':
             line += 1;
