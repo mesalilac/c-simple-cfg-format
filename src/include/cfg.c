@@ -63,6 +63,13 @@ cfg_Tokens *cfg_lexer(char *text) {
 
         switch (text[cursor]) {
         case '\n': {
+            cfg_Token *token = malloc(sizeof(cfg_Token));
+            token->type = NEWLINE;
+            token->string_value = NULL;
+            token->line = line;
+            token->column = column;
+            tokens->list[tokens->last_index++] = token;
+
             line += 1;
             column = 0;
         } break;
