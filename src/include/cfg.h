@@ -22,7 +22,7 @@ typedef struct {
 } cfg_Token;
 
 typedef struct {
-    cfg_Token *list;
+    cfg_Token **list;
     int last_index;
 } cfg_Tokens;
 
@@ -36,7 +36,7 @@ typedef struct {
 } cfg_KVPair;
 
 typedef struct {
-    cfg_KVPair *pairs;
+    cfg_KVPair **pairs;
     int last_index;
 } cfg_KVPairs;
 
