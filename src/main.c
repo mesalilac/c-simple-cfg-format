@@ -51,8 +51,8 @@ int main() {
     cfg_ParserError *error = cfg_parser(tokens_list);
 
     if (error != NULL) {
-        printf("line: %d, column: %d: %s\n", error->token.line,
-               error->token.column, error->message);
+        printf("ERROR: Parsing error at line: %d, column: %d: %s\n",
+               error->token.line, error->token.column, error->message);
     }
 
     return 0;
