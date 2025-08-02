@@ -45,6 +45,8 @@ typedef struct {
     char *message;
 } cfg_ParserError;
 
+void cfg_print_token(cfg_Token *token);
+char *cfg_get_token_type(cfg_TokenType type);
 cfg_Tokens *cfg_lexer(char *text);
 cfg_ParserError *cfg_parser(cfg_Tokens *tokens_list);
 
