@@ -23,7 +23,7 @@ typedef struct {
 
 typedef struct {
     cfg_Token *list;
-    int count;
+    int last_index;
 } cfg_Tokens;
 
 typedef struct {
@@ -37,7 +37,7 @@ typedef struct {
 
 typedef struct {
     cfg_KVPair *pairs;
-    int count;
+    int last_index;
 } cfg_KVPairs;
 
 typedef struct {
