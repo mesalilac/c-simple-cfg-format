@@ -55,5 +55,10 @@ int main() {
                error->token.line, error->token.column, error->message);
     }
 
+    for (int i = 0; i != tokens_list->last_index; i++) {
+        cfg_Token *token = tokens_list->list[i];
+        cfg_print_token(token);
+    }
+
     return 0;
 }
