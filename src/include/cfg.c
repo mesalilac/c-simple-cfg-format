@@ -96,6 +96,14 @@ cfg_Tokens *cfg_lexer(char *text) {
             token->column = column;
             tokens->list[tokens->last_index++] = token;
         } break;
+        case '=': {
+            cfg_Token *token = malloc(sizeof(cfg_Token));
+            token->type = EQUALS;
+            token->string_value = NULL;
+            token->line = line;
+            token->column = column;
+            tokens->list[tokens->last_index++] = token;
+        } break;
 
         default:
             break;
