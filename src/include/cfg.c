@@ -17,12 +17,8 @@ char *cfg_get_token_type(cfg_TokenType type) {
     switch (type) {
     case IDENTIFIRE:
         return "IDENTIFIRE";
-    case STRING:
-        return "STRING";
-    case NUMBER:
-        return "NUMBER";
-    case BOOLEAN:
-        return "BOOLEAN";
+    case VALUE:
+        return "VALUE";
     case EQUALS:
         return "EQUALS";
     case COMMENT:
