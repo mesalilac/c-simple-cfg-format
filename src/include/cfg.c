@@ -73,6 +73,33 @@ cfg_Tokens *cfg_lexer(char *text) {
             line += 1;
             column = 0;
         } break;
+        case '#': {
+            cursor += 1; // skip #
+
+            if (text[cursor] == ' ') {
+                cursor += 1;
+            }
+
+            char *tmp_string = malloc(sizeof(char) * 128);
+            int idx = 0;
+            while (cursor != strlen(text) && text[cursor] != '\0' &&
+                   text[cursor] != '\n') {
+                tmp_string[idx] = text[cursor];
+
+                cursor += 1;
+                idx += 1;
+            }
+            if (text[cursor] == '\n')
+                cursor -= 1;
+            tmp_string[idx] = '\0';
+
+            cfg_Token *token = malloc(sizeof(cfg_Token));
+            token->type = COMMENT;
+            token->string_value = tmp_string;
+            token->line = line;
+            token->column = column;
+            tokens->list[tokens->last_index++] = token;
+        } break;
 
         default:
             break;
