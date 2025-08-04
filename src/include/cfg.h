@@ -3,9 +3,7 @@
 
 typedef enum {
     IDENTIFIRE,
-    STRING,
-    NUMBER,
-    BOOLEAN,
+    VALUE,
     EQUALS,
     COMMENT,
     INLINE_COMMENT,
